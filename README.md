@@ -17,6 +17,8 @@ Saw that subprocess is returning "more: can't open '|': No such file or director
 
 AFter start using it, i saw the CPU value went from 2% to 6%
 
+If you want to test it, just execute the .py file with python, and if you want to meke it work add it to the boot after a sleep 30 (Administration -> Scripts -> Init) 
+
 This is my very first personal sort of web page and Git.
 
 I hope you ejonoy being able to wach how the Ads Blocker is working in your router.
