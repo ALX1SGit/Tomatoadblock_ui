@@ -15,6 +15,8 @@ The search bar and the PieHole graph has been done using js, in order to dont ha
 
 Saw that subprocess is returning "more: can't open '|': No such file or directory ;more: can't open 'grep': No such file or directory; more: can't open 'dnsmasq': No such file or directory" but, this is not affecting the functionality of the program.
 
+AFter start using it, i saw the CPU value went from 2% to 6%
+
 This is my very first personal sort of web page and Git.
 
 I hope you ejonoy being able to wach how the Ads Blocker is working in your router.
