@@ -5,7 +5,7 @@ This is the first working version of the service, it need to be executed using P
 
 I am working with a Linksys ea6500 v2 and Tomato v1.28.0000 -3.5-140 K26ARM USB AIO-64K
 
-Have in mind that the size of the logs needs to be configured on the router (Administration -> Logging -> Max Size before rotate). I configured value as 200KB (this script work with a single value). I was not sure for making this value way bigger, or creating a local copy inside the usb plagged into the router.
+Have in mind that the size of the logs needs to be configured on the router (Administration -> Logging -> Max Size before rotate). I configured value as 200KB (this script work with a single file of logs). I was not sure for making this value way bigger, or creating a local copy inside the usb plagged into the router.
 
 ![image](https://user-images.githubusercontent.com/86429971/123483450-16169700-d5dd-11eb-907e-3f8965464399.png)
 
