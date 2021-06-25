@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DNS MON</title>
+</head>
+<body>
+<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+<!--<link rel="shortcut icon" href="templates/icon.png">-->
+
+<div class="title">
+
+    <div class="title_left">
+        <section class="dash_left">
+            <h2><center>Online DNS Clients: {{online}}</center></h2>
+                {% with devices = devices %}
+                {% if devices%}
+                {% for device in devices %}
+                <li><center>{{ device }}</center></li>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+        </section>
+    </div>
+
+    <div class="title_center">
+        <section class="dash_center">
+            <center>
+                <h2>DNS MONITOR (ADsBlocker) BY AC</h2>
+                <li><center>Logs displayed: {{lines}}</center></li>
+                <li><center>DNS Resolutions: {{resolutions}}</center></li>
+                <li><center>Queries filtered in last {{delta}} minutes: {{block}}</center></li>
+                <form action="/" method="GET">
+                    <input class="buttons" type="submit" name="" value="Refresh">
+                </form>
+            </section>
+        </center>
+    </div>
+
+    <div class="title_right">
+        <section class="dash_right">
+                <h2><center>Records Bloqued: </center></h2>
+            <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+            <script type="text/javascript">
+              google.charts.load("current", {packages:["corechart"]});
+              google.charts.setOnLoadCallback(drawChart);
+              function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                  ['Task', 'Hours per Day'],
+                  ['Work',     11],
+                  ['Eat',      2],
+                  ['Commute',  2],
+                  ['Watch TV', 2],
+                  ['Sleep',    7]
+                ]);
+
+                var options = {
+                  title: 'My Daily Activities',
+                  pieHole: 0.4,
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+                chart.draw(data, options);
+              }
+            </script>
+            <div id="donutchart" style="width: 100%; height: 80%;"></div>
+        </section>
+    </div>
+</div>
+
+
+<div class="logs">
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for log..">
+
+<ul id="myUL">
+    {% with messages = get_flashed_messages() %}
+    {% if messages%}
+    {% for message in messages %}
+    <li><a href="#">{{ message.0 }}:{{ message.1 }}:{{ message.2 }} - {{ message.3 }}</a></li>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+</ul>
+
+<script src="{{url_for('static',filename='js/main.js')}}"></script>
+
+
+</div>
+</body>
+</html>
