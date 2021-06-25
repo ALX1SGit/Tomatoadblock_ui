@@ -1,5 +1,5 @@
 # Tomatoadblock_ui
-This is a Python script that is using Flask to provide a Web service for monitoring Ad Blocker peformance (when Debug mode is enable inside Ads Blokcer for Tomato). I am using Vainilla Ads Bloquer but can be user for any custom scritps that uses dnsmasq to filter DNS resolutions for Ads Sources.
+This is a Python script that is using Flask to provide a Web service for monitoring Ad Blocker peformance (like PiHole) (In order to work Debug mode must be enabled inside Ads Blokcer for Tomato {Advanced Settings -> Adblock)). I am using Vainilla Ads Bloquer but can be user for any custom scritps that uses dnsmasq to filter DNS resolutions for Ads Sources.
 
 This is the first working version of the service, it need to be executed using Python3 and will use the port 3000 for the web service
 
