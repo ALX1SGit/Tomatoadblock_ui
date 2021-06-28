@@ -15,8 +15,8 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 #Getting Devices Name
 def device_list():
     usr= 'root'
-    password= 'laylasaurio'
-    router = "192.168.1.1"
+    password= 'password'
+    router = "192.168.1.1" #Router IP
     queryStr1 = 'http://' + router + '/status-devices.asp'
     r1 = requests.get(queryStr1, auth=(usr, password), verify=False)
     dhcpd_lease=str(r1.text).split("dhcpd_lease = ")[1].split(";")[0].replace("[ [","").replace("]]","").split("],[")
