@@ -5,9 +5,14 @@ This is the first working version of the service, it need to be executed using P
 
 I am working with a Linksys ea6500 v2 and Tomato v1.28.0000 -3.5-140 K26ARM USB AIO-64K
 
-Have in mind that the size of the logs needs to be configured on the router (Administration -> Logging -> Max Size before rotate). I configured value as 200KB (this script work with a single file of logs). I was not sure for making this value way bigger, or creating a local copy inside the usb plagged into the router.
+Have in mind that the size of the logs needs to be configured on the router (Administration -> Logging -> Max Size before rotate). I configured value as 250KB to have (this script work with a single file of logs). I was not sure for making this value way bigger, or creating a local copy inside the usb plagged into the router.
 
-![image](https://user-images.githubusercontent.com/86429971/123483450-16169700-d5dd-11eb-907e-3f8965464399.png)
+Main Dashboard
+![image](https://user-images.githubusercontent.com/86429971/123705735-b4a13300-d83d-11eb-80d1-98f8ded74bdd.png)
+
+DNS filtered by device (clicking device name on the top left corner)
+![image](https://user-images.githubusercontent.com/86429971/123705993-0ea1f880-d83e-11eb-996a-227702f02752.png)
+
 
 The program basically pull information from the logs and filter using tag for dns service. After that gather devices information from leases (to get the client name). And then made some calcs to prepare information to show into the ui.
 
