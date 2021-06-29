@@ -54,9 +54,9 @@ def home():
     min=first.split(" ")[2].split(":")[1]
     s=first.split(" ")[2].split(":")[2]
     time0= datetime.datetime(int(y), int(mon), int(d), int(h), int(min), int(s))
-    timenow=datetime.datetime.now()
+    timenow=datetime.datetime.now() - datetime.timedelta(hours=3)
     print("now: " + str(timenow))
-    delta=str(timenow-time0).split(":")[0]
+    delta=str(int(timenow-time0)-3).split(":")[0] + " hs " + str(timenow-time0).split(":")[1]
     print("Diference is: " + str(delta))
     lines= str(lines)
     delta=str(delta)
@@ -112,9 +112,9 @@ def search(dev):
     min=first.split(" ")[2].split(":")[1]
     s=first.split(" ")[2].split(":")[2]
     time0= datetime.datetime(int(y), int(mon), int(d), int(h), int(min), int(s))
-    timenow=datetime.datetime.now()
+    timenow=datetime.datetime.now() - datetime.timedelta(hours=3)
     print("now: " + str(timenow))
-    delta=str(timenow-time0).split(":")[0]
+    delta=str(int(timenow-time0)-3).split(":")[0] + " hs " + str(timenow-time0).split(":")[1]
     print("Diference is: " + str(delta))
     lines= str(lines)
     delta=str(delta)
