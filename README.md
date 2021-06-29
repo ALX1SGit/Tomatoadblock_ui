@@ -32,6 +32,10 @@ The search bar and the PieHole graph has been done using js, in order to dont ha
 Saw that subprocess is returning "more: can't open '|': No such file or directory ;more: can't open 'grep': No such file or directory; more: can't open 'dnsmasq': No such file or directory" but, this is not affecting the functionality of the program.
 
 AFter start using it, i saw the CPU value went from 2% to 6%
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+20219 20218 root     S    48960 19.1   1  4.1 /opt/bin/python3 /opt/python3/flask_dnsmon/dnsmon.py
+20218 20213 root     S    29400 11.4   0  0.0 python3 /opt/python3/flask_dnsmon/dnsmon.py
+
 
 Known issues:
 * When two DNS request are going on at the same time, sometimes the logs are not ordered, and in this cases you will see some other queries inside the filtered view (this can be solved by recognizing a diferent hostname on the log and not being a Cname record)
