@@ -18,7 +18,7 @@ Requirements:
 * Python -  flask python
 * python -  subprocess
 * python -  shlex
-* python -  datetime
+* python -  datetime (the time has been calculated to my zone (GTM-3 using timedelta)
 * Python -  time
 * python -  strptime
 * python -  requests
