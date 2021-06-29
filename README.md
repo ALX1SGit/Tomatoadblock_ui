@@ -13,6 +13,17 @@ Main Dashboard
 DNS filtered by device (clicking device name on the top left corner)
 ![image](https://user-images.githubusercontent.com/86429971/123705993-0ea1f880-d83e-11eb-996a-227702f02752.png)
 
+Requirements:
+* Python (I am running 3.9 using Entware)
+* Python -  flask python
+* python -  subprocess
+* python -  shlex
+* python -  datetime
+* Python -  time
+* python -  strptime
+* python -  requests
+* python -  urllib3
+* Python flask_googlecharts
 
 The program basically pull information from the logs and filter using tag for dns service. After that gather devices information from leases (to get the client name). And then made some calcs to prepare information to show into the ui.
 
