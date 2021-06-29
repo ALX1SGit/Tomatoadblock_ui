@@ -33,6 +33,9 @@ Saw that subprocess is returning "more: can't open '|': No such file or director
 
 AFter start using it, i saw the CPU value went from 2% to 6%
 
+Known issues:
+* When two DNS request are going on at the same time, sometimes the logs are not ordered, and in this cases you will see some other queries inside the filtered view (this can be solved by recognizing a diferent hostname on the log and not being a Cname record)
+
 If you want to test it, just execute the .py file with python, and if you want to meke it work add it to the boot after a sleep 30 (Administration -> Scripts -> Init) 
 
 This is my very first personal sort of web page and Git.
