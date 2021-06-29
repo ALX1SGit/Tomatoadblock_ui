@@ -8,10 +8,10 @@ I am working with a Linksys ea6500 v2 and Tomato v1.28.0000 -3.5-140 K26ARM USB 
 Have in mind that the size of the logs needs to be configured on the router (Administration -> Logging -> Max Size before rotate). I configured value as 250KB to have (this script work with a single file of logs). I was not sure for making this value way bigger, or creating a local copy inside the usb plagged into the router.
 
 Main Dashboard
-![image](https://user-images.githubusercontent.com/86429971/123818513-6ccaec00-d8cf-11eb-90fa-b9466ab22dcb.png)
+![image](https://user-images.githubusercontent.com/86429971/123818791-aa2f7980-d8cf-11eb-8e2b-65cb91213167.png)
 
 DNS filtered by device (clicking device name on the top left corner)
-![image](https://user-images.githubusercontent.com/86429971/123818553-76ecea80-d8cf-11eb-95ff-cd29a063d79b.png)
+![image](https://user-images.githubusercontent.com/86429971/123818894-bd424980-d8cf-11eb-8890-54adce097bed.png)
 
 Requirements:
 * Python (I am running 3.9 using Entware)
