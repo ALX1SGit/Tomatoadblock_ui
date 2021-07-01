@@ -36,7 +36,8 @@ def home():
     dhcpd_lease=device_list()
     print(dhcpd_lease)
 
-    cmd = 'more /var/log/messages | grep "dnsmasq"'
+    #cmd = 'more /var/log/messages | grep "dnsmasq"'
+    cmd = '''sed -n '1! G;$ p;h' /var/log/messages | grep "dnsmasq"'''
     proc = subprocess.Popen(shlex.split(cmd), stdout=subprocess.PIPE)
     out, err = proc.communicate()
 
