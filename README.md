@@ -9,9 +9,11 @@ Have in mind that the size of the logs needs to be configured on the router (Adm
 
 Main Dashboard
 ![image](https://user-images.githubusercontent.com/86429971/123818791-aa2f7980-d8cf-11eb-8e2b-65cb91213167.png)
+Displays from newer log to the older
 
 DNS filtered by device (clicking device name on the top left corner)
 ![image](https://user-images.githubusercontent.com/86429971/123818894-bd424980-d8cf-11eb-8890-54adce097bed.png)
+Displays from older to the newer
 
 Requirements:
 * Python (I am running 3.9 using Entware)
