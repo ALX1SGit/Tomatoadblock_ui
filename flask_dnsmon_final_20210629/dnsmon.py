@@ -14,7 +14,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 #Getting Devices Name
 def device_list():
     usr= 'root'
-    password= 'laylasaurio'
+    password= 'password'
     router = "192.168.1.1"
     queryStr1 = 'http://' + router + '/status-devices.asp'
     r1 = requests.get(queryStr1, auth=(usr, password), verify=False)
