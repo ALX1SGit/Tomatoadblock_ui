@@ -51,10 +51,18 @@ def home():
     print("first: " + str(first))
     y=datetime.date.today().year
     mon=strptime(first.split(" ")[0],'%b').tm_mon
-    d=first.split(" ")[1]
-    h=first.split(" ")[2].split(":")[0]
-    min=first.split(" ")[2].split(":")[1]
-    s=first.split(" ")[2].split(":")[2]
+    try:
+        min=first.split(" ")[2].split(":")[1]
+        s=first.split(" ")[2].split(":")[2]
+    #date in the log has just 1 digit
+    except:
+        min=first.split(" ")[3].split(":")[1]
+        s=first.split(" ")[3].split(":")[2]
+        d=first.split(" ")[2]
+        h=first.split(" ")[3].split(":")[0]
+    else:
+        d=first.split(" ")[1]
+        h=first.split(" ")[2].split(":")[0]
     time0= datetime.datetime(int(y), int(mon), int(d), int(h), int(min), int(s))
     timenow=datetime.datetime.now() - datetime.timedelta(hours=3)
     uptime=str(timenow-start).split(":")[0] + " hs " + str(timenow-time0).split(":")[1] + " min"
@@ -110,10 +118,18 @@ def search(dev):
     print("first: " + str(first))
     y=datetime.date.today().year
     mon=strptime(first.split(" ")[0],'%b').tm_mon
-    d=first.split(" ")[1]
-    h=first.split(" ")[2].split(":")[0]
-    min=first.split(" ")[2].split(":")[1]
-    s=first.split(" ")[2].split(":")[2]
+    try:
+        min=first.split(" ")[2].split(":")[1]
+        s=first.split(" ")[2].split(":")[2]
+    #date in the log has just 1 digit
+    except:
+        min=first.split(" ")[3].split(":")[1]
+        s=first.split(" ")[3].split(":")[2]
+        d=first.split(" ")[2]
+        h=first.split(" ")[3].split(":")[0]
+    else:
+        d=first.split(" ")[1]
+        h=first.split(" ")[2].split(":")[0]
     time0= datetime.datetime(int(y), int(mon), int(d), int(h), int(min), int(s))
     timenow=datetime.datetime.now() - datetime.timedelta(hours=3)
     uptime=str(timenow-start).split(":")[0] + " hs " + str(timenow-time0).split(":")[1] + " min"
