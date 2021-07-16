@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DNS MON</title>
+    <!-- Calling for General JS file-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- Defining PieHole Graph-->
+    <script type="text/javascript">
+              google.charts.load("current", {packages:["corechart"]});
+              google.charts.setOnLoadCallback(drawChart);
+              function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                  ['Task', 'Hours per Day'],
+                  ['Forward',     {{forward}}],
+                  ['Adsblock',      {{block_remote}}],
+				  ['Localblock',      {{block_local}}],
+                ]);
+
+                var options = {
+                  title: ' ',
+                  backgroundColor: 'transparent',
+                  chartArea:{left:'10%',top:0,width:'80%',height:'100%'},
+
+                  pieHole: 0.4,
+                  slices: {
+                         0: { color: 'green' },
+                       1: { color: 'red' },
+					   2: { color: 'blue' }
+                    },
+
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+                chart.draw(data, options);
+              }
+            </script>
+    <script src="{{url_for('static',filename='js/main.js')}}"></script>
+</head>
+<body>
+<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+<!--<link rel="shortcut icon" href="templates/icon.png">-->
+
+<div class="title">
+
+    <div class="title_left">
+        <section class="dash_left">
+            <h2><center>Online DNS Clients: {{online}}</center></h2>
+                {% with devices = devices %}
+                {% if devices%}
+                {% for device in devices %}
+                <a href="/search/{{device.1}}"><center>{{ device.0 }} -> {{ device.1 }}</center></a>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+        </section>
+    </div>
+
+    <div class="title_center">
+        <section class="dash_center">
+            <center>
+                <h2>DNS Adblock Monitor v1.1 by ALX</h2>
+				<h2>Uptime: {{uptime}}</h2>
+                <h2>Logs displayed: {{lines}}</h2>
+                 <h2>DNS Resolutions: {{resolutions}}</h2>
+                <h2>Blocked records in last {{delta}} minutes: {{block}}</h2>
+                <form action="/" method="GET">
+                    <input class="buttons" type="submit" name="" value="HOME">
+                </form>
+            </section>
+        </center>
+    </div>
+
+    <div class="title_right">
+        <section class="dash_right">
+                <h2><center>Blocked Records: </center></h2>
+
+            <div id="donutchart" style="width: 90%; height: 70%;"><center></center></div>
+        </section>
+    </div>
+</div>
+
+
+<div class="logs">
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for log..">
+
+<ul id="myUL">
+    {% with messages = get_flashed_messages() %}
+    {% if messages%}
+    {% for message in messages %}
+    <li><a>
+        <p><center>--- DNS Querie Start ---</center></p>
+        <!--<p> {{ message }} </p>-->
+        {% for line in message %}
+        <p> {{ line }} </p>
+        {% endfor %}
+        <p><center>
+		<form action="/blacklist/{{message.0}}" method="GET">
+           --- DNS Querie End --- <input class="buttons" style= "color:white; background-color: blue;" type="submit" name="" value="Blacklist first record">
+        </form></center></p>
+    </a></li>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+</ul>
+
+
+</div>
+</body>
+</html>
